@@ -160,9 +160,9 @@ For maxium effort, set up port forwards on your internet router to the pi. Outsi
 ```console
 cd ~
 ```
-+ Clone the packet forwarer for sx1302 based gateways like the RAK2287
++ Clone the packet forwadrer for sx1302 based gateways like the RAK2287
 ```console
-https://github.com/helium/sx1302_hal.git
+git clone https://github.com/helium/sx1302_hal.git
 ```
 
 + Move to the project folder 
