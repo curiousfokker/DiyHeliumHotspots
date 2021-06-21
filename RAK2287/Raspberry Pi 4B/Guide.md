@@ -79,14 +79,9 @@ sudo raspi-config
     - Reboot with `sudo reboot`
 
 + Update software on the pi
-    - Update software repo cache
+    - Update & upgrade software repo cache
     ``` console
-    sudo apt update
-    ```
-
-    - Perform available updates
-    ```console
-    sudo apt upgrade
+    sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremovee
     ```
 
     - Install git and jq 
