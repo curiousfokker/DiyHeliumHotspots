@@ -81,7 +81,7 @@ sudo raspi-config
 + Update software on the pi
     - Update & upgrade software repo cache
     ``` console
-    sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremovee
+    sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove
     ```
 
     - Install git and jq 
