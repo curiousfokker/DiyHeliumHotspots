@@ -48,7 +48,7 @@ sudo raspi-config
         - Select `SPI`
         - Select `Yes`
     - Select `Interfacing Options`
-        - Select `IC2`
+        - Select `I2C`
         - Select `Yes`
     - Select `Interfacing Options`
         - Select `Serial Communictioans`
