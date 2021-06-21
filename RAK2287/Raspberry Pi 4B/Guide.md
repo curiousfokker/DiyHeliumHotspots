@@ -55,7 +55,9 @@ sudo raspi-config
         - Select `No` for shell access
         - Select `Yes` for serial port hardware
         - Select `Yes` to confirm
-    - Set hostname if desired
+    - Select `Network Options`
+        -Select `N1 hostname` 
+        -enter new hostname
     - Save changes and reboot by selecting `Finish`
 
 + SSH back into raspberry pi
