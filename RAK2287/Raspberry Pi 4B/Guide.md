@@ -12,10 +12,7 @@
 ## Pi basic Config
 
 + SSH into raspberry pi
-```console
-ssh pi@raspberrypi.local
-```
-or
+
 ```console
 ssh pi@IP-ADDRESS' where IP-ADDRESS is the local IP of the raspberry pi
 ```
@@ -46,6 +43,18 @@ sudo raspi-config
         - Select Hostname
         - Choose a new hostname [adjective-color-animalMINER]
        - Save changes and reboot by selecting `Finish`
+       
++ Change the user name from Pi to Miner
+```console
+sudo su   ```
+then
+    ```sed -i s/pi/miner/g /etc/passwd
+sed -i s/pi/miner/g /etc/shadow
+sed -i s/pi/miner/g /etc/group
+sed -i s/pi/<miner/g /etc/sudoers
+sed -i s/pi/miner/g /etc/gshadow
+mv /home/pi /home/miner
+reboot```
 
 + SSH back into raspberry pi
 
