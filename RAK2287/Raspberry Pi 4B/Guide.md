@@ -42,6 +42,9 @@ sudo raspi-config
         - Select `No` for shell access
         - Select `Yes` for serial port hardware
         - Select `Yes` to confirm
+    - Select System Options
+        - Select Hostname
+        - Choose a new hostname [adjective-color-animalMINER]
        - Save changes and reboot by selecting `Finish`
 
 + SSH back into raspberry pi
