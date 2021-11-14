@@ -46,15 +46,18 @@ sudo raspi-config
        
 + Change the user name from Pi to Miner
 ```console
-sudo su   ```
+sudo su
+```
 then
-    ```sed -i s/pi/miner/g /etc/passwd
+```console
+sed -i s/pi/miner/g /etc/passwd
 sed -i s/pi/miner/g /etc/shadow
 sed -i s/pi/miner/g /etc/group
 sed -i s/pi/<miner/g /etc/sudoers
 sed -i s/pi/miner/g /etc/gshadow
 mv /home/pi /home/miner
-reboot```
+reboot
+```
 
 + SSH back into raspberry pi
 
