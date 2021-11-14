@@ -133,10 +133,17 @@ mkdir ~/overlay
 ```
 
 + Set up how overlay will work
+
 ```console
 cd overlay```
+
++ Create the Sys Config file
+
 ```console
 nano sys.config```
+
++ Paste this into that config file
+
 ```console
 %% -*- erlang -*-
 [
