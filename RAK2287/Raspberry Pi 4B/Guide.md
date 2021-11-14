@@ -7,20 +7,7 @@
 + Flash it to your micro sd card using using a tool such as Etcher or Raspberry Pi imager.
 
 + Create new (empty) file on root of `boot` SD card called `ssh`
-
-+ Add wifi login info if desired, add text file `wpa_supplicant.conf` to root of `boot` SD card.
-
-```
-country=countryCode
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
- 
-network={
-    ssid="YOURSSID"
-    psk="YOURPASSWORD"
-    scan_ssid=1
-}
-```
+```touch ssh```
 
 ## Pi basic Config
 
@@ -55,10 +42,7 @@ sudo raspi-config
         - Select `No` for shell access
         - Select `Yes` for serial port hardware
         - Select `Yes` to confirm
-    - Select `Network Options`
-        -Select `N1 hostname` 
-        -enter new hostname
-    - Save changes and reboot by selecting `Finish`
+       - Save changes and reboot by selecting `Finish`
 
 + SSH back into raspberry pi
 
