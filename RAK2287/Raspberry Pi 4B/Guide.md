@@ -107,7 +107,7 @@ reboot
 
     - Allow pi user to run docker by adding pi to the docker group.
     ```console
-    sudo usermod -aG docker pi
+    sudo usermod -aG docker miner
     ```
 
     - Reboot for changes to take affect.
@@ -120,13 +120,46 @@ Source: https://developer.helium.com/blockchain/run-your-own-miner
 
 + SSH into raspberry pi (if not already connected).
 ```console
-ssh pi@raspberrypi.local
+ssh miner@raspberrypi.local
 ```
 
 + Create directory for miner data
 ```console
 mkdir ~/miner_data
 ```
++ Create directory for overlay
+```console
+mkdir ~/overlay
+```
+
++ Set up how overlay will work
+```console
+cd overlay```
+```console
+nano sys.config```
+```console
+%% -*- erlang -*-
+[
+  "config/sys.config",
+  {lager,
+    [
+      {log_root, "/var/data/log"}
+    ]},
+  {blockchain,
+    [
+      {snapshot_memory_limit, 1000},
+      {key, undefined}
+    ]},
+  {miner,
+    [
+     {jsonrpc_ip, {0,0,0,0}}, %% bind jsonrpc to host when in docker container
+     {use_ebus, false},
+      {radio_device, { {0,0,0,0}, 1680,
+        {0,0,0,0}, 31341} }
+    ]}
+].```
+ - Press CTRL-X, and then Y, and then Enter to save changes
+    
 
 + Get the filename for the most recent version of the miner docker image from quay.io/team-helium/miner. Make sure to get the arm64 version for the pi. They are in the format `miner-xxxNN_YYYY.MM.DD` to the current one at the time of this document is `miner-arm64_2020.09.08.0_GA`.
 
