@@ -1,4 +1,4 @@
-# Set up helium DIY pi
+# Set up a DIY Miner & Packet Forwarder, using either a Pi or a cloud miner.
 
 ## Image your Raspberry Pi microsd card
 + Download the Raspberry Pi OS 64 bit lite image
