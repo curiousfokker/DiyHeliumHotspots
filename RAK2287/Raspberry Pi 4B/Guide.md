@@ -44,20 +44,9 @@ sudo raspi-config
         - Choose a new hostname [adjective-color-animalMINER]
        - Save changes and reboot by selecting `Finish`
        
-+ Change the user name from Pi to Miner
-```console
-sudo su
-```
-then
-```console
-sed -i s/pi/miner/g /etc/passwd
-sed -i s/pi/miner/g /etc/shadow
-sed -i s/pi/miner/g /etc/group
-sed -i s/pi/<miner/g /etc/sudoers
-sed -i s/pi/miner/g /etc/gshadow
-mv /home/pi /home/miner
-reboot
-```
++ Change the user to "miner" from "pi"
+
+```sudo adduser miner```
 
 + SSH back into raspberry pi
 
@@ -105,7 +94,7 @@ reboot
     rm get-docker.sh
     ```
 
-    - Allow pi user to run docker by adding pi to the docker group.
+    - Allow miner user to run docker by adding miner to the docker group.
     ```console
     sudo usermod -aG docker miner
     ```
@@ -168,7 +157,7 @@ nano sys.config```
  - Press CTRL-X, and then Y, and then Enter to save changes
     
 
-+ Get the filename for the most recent version of the miner docker image from quay.io/team-helium/miner. Make sure to get the arm64 version for the pi. They are in the format `miner-xxxNN_YYYY.MM.DD` to the current one at the time of this document is `miner-arm64_2020.09.08.0_GA`.
++ Get the filename for the most recent version of the miner docker image from quay.io/team-helium/miner. Make sure to get the CORRECT (arm64 vs amd64) version for the pi. They are in the format `miner-xxxNN_YYYY.MM.DD` to the current one at the time of this document is `miner-arm64_2020.09.08.0_GA`.
 
 + This docker command will download docker image and set it to always start up. Be sure to swap out `miner-xxxNN_YYYY.MM.DD.0_GA` for the current image name. Also, if you're running the cloud use amd64, if on a Pi arm64
 
@@ -189,7 +178,7 @@ quay.io/team-helium/miner:miner-arm64_2021.11.11.0_GA
 docker ps
 ```
 
-For maxium effort, set up port forwards on your internet router to the pi. Outside port '44158/TCP' should forward to the internal IP of the pi.
+For maxium effort, set up port forwards on your internet router to the RPi. Outside port '44158/TCP' should forward to the internal IP of the Rpi.
 
 ## Set up Packet Forwarder
 
