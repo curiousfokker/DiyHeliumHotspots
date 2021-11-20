@@ -174,6 +174,11 @@ nano sys.config
 ```
 
 - Press CTRL-X, and then Y, and then Enter to save changes
+
+-  Allow miner user to move files on and off (useful for moving the swarm key off)
+    ```console
+    sudo chown -R miner:miner ~/miner_data/miner/
+    ```
     
 
 + Get the filename for the most recent version of the miner docker image from quay.io/team-helium/miner. Make sure to get the CORRECT (arm64 vs amd64) version for the pi. They are in the format `miner-xxxNN_YYYY.MM.DD` to the current one at the time of this document is `miner-arm64_2020.09.08.0_GA`.
@@ -197,7 +202,7 @@ quay.io/team-helium/miner:miner-arm64_2021.11.11.0_GA
 docker ps
 ```
 
-For maxium effort, set up port forwards on your internet router to the RPi. Outside port '44158/TCP' should forward to the internal IP of the Rpi.
+Set up port forwards on your internet router to the RPi. Outside port '44158/TCP' should forward to the internal IP of the Rpi.
 
 ## Set up Packet Forwarder
 
