@@ -112,7 +112,12 @@ sudo raspi-config
     ```console
     sudo usermod -aG docker miner
     ```
-
+    
+    -Allow miner user to move files on and off (useful for moving the swarm key off)
+    ```console
+    sudo chown -R miner:miner ~/miner_data/miner/
+    ```
+    
     - Reboot for changes to take affect.
     ```console
     sudo reboot
