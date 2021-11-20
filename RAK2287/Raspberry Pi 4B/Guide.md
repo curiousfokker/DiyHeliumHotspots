@@ -46,9 +46,18 @@ sudo raspi-config
        
 + Change the user to "miner" from "pi"
 
-```sudo adduser miner```
+```console
+    sudo adduser miner```
+    
++ Give user "miner" sudo permissions
+```console
+    sudo usermod -aG sudo miner```
+    
++ Reboot
+```console
+    sudo reboot```
 
-+ SSH back into raspberry pi
++ SSH back into raspberry pi as miner
 
 + Increase the swap file size
     - Turn off swap
