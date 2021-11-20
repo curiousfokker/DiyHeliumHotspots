@@ -50,12 +50,16 @@ sudo raspi-config
     sudo adduser miner```
     
 + Give user "miner" sudo permissions
-```console
-    sudo usermod -aG sudo miner```
+
+    ```console
+    sudo usermod -aG sudo miner
+    ```
     
 + Reboot
-```console
-    sudo reboot```
+
+    ```console
+    sudo reboot
+    ```
 
 + SSH back into raspberry pi as miner
 
