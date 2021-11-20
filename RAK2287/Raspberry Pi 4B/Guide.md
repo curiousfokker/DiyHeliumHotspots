@@ -130,6 +130,7 @@ ssh miner@raspberrypi.local
 ```console
 mkdir ~/miner_data
 ```
+
 + Create directory for overlay
 ```console
 mkdir ~/overlay
@@ -138,12 +139,14 @@ mkdir ~/overlay
 + Set up how overlay will work
 
 ```console
-cd overlay```
+cd overlay
+```
 
 + Create the Sys Config file
 
 ```console
-nano sys.config```
+nano sys.config
+```
 
 + Paste this into that config file
 
