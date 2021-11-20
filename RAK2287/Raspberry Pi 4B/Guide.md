@@ -27,7 +27,9 @@ passwd
 ```console
 sudo raspi-config
 ```
-
+    - Select System Options
+        - Select Hostname
+        - Choose a new hostname [initials-location-MINER]
     - Select `Interfacing Options`
         - Select `SPI`
         - Select `Yes`
@@ -35,13 +37,11 @@ sudo raspi-config
         - Select `I2C`
         - Select `Yes`
     - Select `Interfacing Options`
-        - Select `Serial Communictioans`
+        - Select `Serial Port`
         - Select `No` for shell access
         - Select `Yes` for serial port hardware
         - Select `Yes` to confirm
-    - Select System Options
-        - Select Hostname
-        - Choose a new hostname [adjective-color-animalMINER]
+  
        - Save changes and reboot by selecting `Finish`
        
 + Change the user to "miner" from "pi"
