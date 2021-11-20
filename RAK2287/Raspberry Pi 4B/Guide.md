@@ -46,8 +46,9 @@ sudo raspi-config
        
 + Change the user to "miner" from "pi"
 
-```console
-    sudo adduser miner```
+    ```console
+    sudo adduser miner
+    ```
     
 + Give user "miner" sudo permissions
 
