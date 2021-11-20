@@ -170,8 +170,10 @@ nano sys.config
       {radio_device, { {0,0,0,0}, 1680,
         {0,0,0,0}, 31341} }
     ]}
-].```
- - Press CTRL-X, and then Y, and then Enter to save changes
+].
+```
+
+- Press CTRL-X, and then Y, and then Enter to save changes
     
 
 + Get the filename for the most recent version of the miner docker image from quay.io/team-helium/miner. Make sure to get the CORRECT (arm64 vs amd64) version for the pi. They are in the format `miner-xxxNN_YYYY.MM.DD` to the current one at the time of this document is `miner-arm64_2020.09.08.0_GA`.
@@ -203,6 +205,7 @@ For maxium effort, set up port forwards on your internet router to the RPi. Outs
 ```console
 cd ~
 ```
+
 + Clone the packet forwadrer for sx1302 based gateways like the RAK2287
 ```console
 git clone https://github.com/helium/sx1302_hal.git
@@ -219,6 +222,7 @@ cd sx1302_hal
     ```console
     ssh-keygen -t rsa
     ```
+    
     Press enter three times to accept the defaults.
 
     - Set up your user to use the key pair.
@@ -226,6 +230,7 @@ cd sx1302_hal
     ```console
     ssh-copy-id -i ~/.ssh/id_rsa.pub pi@localhost
     ```
+    
     You will need to enter your password.
 
 + Compile the project
