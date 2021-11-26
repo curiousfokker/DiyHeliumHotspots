@@ -205,7 +205,7 @@ Set up port forwards on your internet router to the RPi. Outside port '44158/TCP
 
 ## Set up Packet Forwarder
 
-+ Make sure your are in your home directory
++ Make sure you're in your home directory
 ```console
 cd ~
 ```
