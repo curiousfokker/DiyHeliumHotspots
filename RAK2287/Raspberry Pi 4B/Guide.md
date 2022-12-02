@@ -153,22 +153,20 @@ nano sys.config
 ```console
 %% -*- erlang -*-
 [
-  "config/sys.config",
-  {lager,
-    [
-      {log_root, "/var/data/log"}
+    "config/sys.config",
+    {lager, [
+        {log_root, "/var/data/log"}
     ]},
-  {blockchain,
-    [
-      {snapshot_memory_limit, 1000},
-      {key, undefined}
+    {blockchain, [
+        {key, undefined}
     ]},
-  {miner,
-    [
-     {jsonrpc_ip, {0,0,0,0}}, %% bind jsonrpc to host when in docker container
-     {use_ebus, false},
-      {radio_device, { {0,0,0,0}, 1680,
-        {0,0,0,0}, 31341} }
+    {miner, [
+        %% bind jsonrpc to host when in a container
+        {jsonrpc_ip, {0, 0, 0, 0}},
+        {use_ebus, false},
+        {gateway_and_mux_enable, true},
+        {gateways_run_chain, false},
+        {radio_device, {{0, 0, 0, 0}, 1680, deprecated, deprecated}}
     ]}
 ].
 ```
@@ -183,7 +181,6 @@ nano sys.config
 docker run -d \
    --restart always \
    --publish 1680:1680/udp \
-   --publish 44158:44158/tcp \
    --name miner \
    --mount type=bind,source=/home/miner/miner_data,target=/var/data \
    --mount type=bind,source=/home/miner/overlay/sys.config,target=/config/sys.config \
@@ -200,8 +197,6 @@ docker ps
     ```console
     sudo chown -R miner:miner ~/miner_data/miner/
     ```
-
-Set up port forwards on your internet router to the RPi. Outside port '44158/TCP' should forward to the internal IP of the Rpi.
 
 ## Set up Packet Forwarder
 
